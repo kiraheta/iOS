@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>iOS Development</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/prism.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="row">
+      	<div class="col-lg-12">
+          <a href="../../ec.html"><img class="logo jumbotron img-responsive" src="../../assets/iOS_Logo.png"
+               alt="udacity logo"></a>
+      	</div>
+      </header>
+
+      <div class="return">
+        <div class="row">
+          <div class="col-md-12">
+            <a href="../../core/Swift_for_Beginners.html">
+              <span class="glyphicon glyphicon-circle-arrow-left"
+              style="font-size:3rem;"></span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="lesson-title">
+            <h1> Functions </h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <hr class="horizontal-line">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="lesson">
+            <h4><a href=""> 1. Intro </a></h4>
+            <p>
+              A <strong>function</strong> is a list of instructions (code)
+              that accomplishes a task. A <strong>method</strong> is a special
+              kind of function that belongs to a type. We've seen examples of
+              both of these already.
+            </p>
+            <ol>
+              <li>
+                <code>print(“Some text”)</code> is an example of calling the
+                <code>print()</code> function which takes a <code>String</code>
+                and prints it to standard output.
+              </li>
+              <li>
+                <code>contains()</code> is an example of a method which belongs
+                to the <code>String</code> type. In order to call the
+                <code>contains</code> method, we must use an instance of the
+                <code>String</code> type.
+              </li>
+            </ol>
+            <h4> 2. Function Syntax </h4>
+            <p>
+              In Swift, functions are defined using the following syntax:
+            </p>
+            <pre style="display: inline-block; width: 100%;">
+              <code class="language-swift">
+<!--      -->  func nameOfFunction() {
+<!--      -->      // body of function goes here
+<!--      -->  }
+            </code></pre>
+            <h4> 3. Functions with Parameters </h4>
+            <pre style="display: inline-block; width: 100%;">
+              <code class="language-swift">
+<!--      -->  func sayHelloToStudent(student: String) {
+<!--      -->      print("Hello, \(student)!")
+<!--      -->  }
+            </code></pre>
+            <h5><strong>Parameters vs. Arguments</strong></h5>
+            <p>
+              There are some special terms here that require special attention.
+              When we look at the definition of a function like
+              <code>sayHelloToStudent(student: String)</code>, any input values
+              that are specified are called <strong>parameters</strong>. Then,
+              when we actually call a function, as in
+              <code>sayHelloToStudent(student: jarrod)</code> the input values
+              that are passed to the function are known as
+              <strong>arguments</strong>.
+            </p>
+            <p>
+              As you may have noticed, inside the body of the function, we
+              access input values using the parameter names. In this case, we
+              just have the single parameter called
+              <code>student</code>. What if there were multiple parameters?
+            </p>
+            <h4><a href="https://www.youtube.com/watch?v=yNru2ImWH5E"> 4. Functions With Multiple Parameters </a></h4>
+            <h4> 5. Function Scope </h4>
+            <h4> 6. Returning Values </h4>
+            <h4> 7. Default Parameters and Using Functions </h4>
+            <h4> 8. Chaining Functions and Practice</h4>
+            <h4><a href="https://www.youtube.com/watch?v=dfBZFk3iS4o"> 9. Outro </a></h4>
+
+          </div>
+
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="row col-md-12">
+            <p><span class="glyphicon glyphicon-chevron-left"></span>
+               <span class="glyphicon glyphicon-chevron-right"></span> with
+               <span class="glyphicon glyphicon-heart"></span> by Kenny Iraheta
+            </p>
+        </div>
+      </footer>
+
+    </div>
+    <script src="../../js/prism.js"></script>
+  </body>
+</html>
