@@ -1,0 +1,28 @@
+html,body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+ol {
+  list-style-type:square;
+}
+
+.jumbotron {
+  background-color: #fafafa!important;
+}
+
+.logo {
+  align: center;
+}
+
+/*.body {
+  font-size: 16px;
+  font-weight: 500;
+}*/
+
+.footer {
+  width: 100%;
+  bottom: 0;
+  text-align: left;
+  padding-top: 40px;
+}
