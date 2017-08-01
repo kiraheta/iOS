@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>iOS Development</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="row">
+      	<div class="col-lg-12">
+      		<a href="../../index.html"><img class="logo jumbotron img-responsive" src="../../assets/iOS_Logo.png"
+               alt="udacity logo"></a>
+      	</div>
+      </header>
+
+      <div class="return">
+        <div class="row">
+          <div class="col-md-12">
+            <a href="../../core/one.html">
+              <span class="glyphicon glyphicon-circle-arrow-left"
+              style="font-size:3rem;"></span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title">
+            <h1> Introduction and XCode </h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <hr class="horizontal-line">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="body">
+            <h4><a href="https://www.youtube.com/watch?v=nsKJe2cfYns"> 1. Introduction </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=VyXUWjIb8Is"> 2. Course Map </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=Lx-RQ5_GYE8"> 3. Pitch Perfect Overview </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=aTfrX4_16uU"> 4. Creating A Hello World Swift IOS App </a></h4>
+            <ol>
+              <li>
+                <p>
+                  <strong>AppDelegate.swift</strong> listens to system events such
+                  as when you app starts, when you get a memory warning, or When
+                  your app sent to the background. It creates a ViewController
+                  object when it notices that your app has launched.<br>
+                  The ViewController object is responsible for setting up
+                  the view described in Main.storyboard and showing it on the
+                  screen to the user
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>ViewController.swift</strong> controls and manages a View.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Main.storyboard</strong> describes the views and app
+                  flow and is the view that the ViewController class manages.
+                </p>
+              </li>
+              <li>
+                <a href="http://codewithchris.com/xcode-project-files-explained/">
+                  Reference</a>
+              </li>
+            </ol>
+            <h4><a href="https://www.youtube.com/watch?v=_prgFXEH_EY"> 5. Tour Of Xcode </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=PSwubla33jI"> 6. Document Outline In Xcode </a></h4>
+            <h4> 7. XCode Shortcuts </h4>
+            <p>
+              Xcode has numerous keyboard shortcuts that are worth learning.
+              Knowing them can help speed up your iOS development, and it saves
+              you from having to reach over to the mouse or trackpad.
+            </p>
+            <p>
+              On the Navigator Panel on the left side, the following keyboard
+              shortcuts cycle through the different navigators.
+            </p>
+            <ul>
+              <li>
+                ⌘ + 0 = Show or Hide the Navigator Panel
+              </li>
+              <li>
+                ⌘ + 1 = Project
+              </li>
+              <li>
+                ⌘ + 2 = Symbol
+              </li>
+              <li>
+                ⌘ + 3 = Find
+              </li>
+              <li>
+                ⌘ + 4 = Issue
+              </li>
+              <li>
+                ⌘ + 5 = Tests
+              </li>
+              <li>
+                ⌘ + 6 = Breakpoint
+              </li>
+              <li>
+                ⌘ + 7 = Report
+              </li>
+            </ul>
+            <p>
+              The Utility Area on the right side of Xcode can also be toggled
+              with the following keyboard shortcuts:
+            </p>
+            <ul>
+              <li>
+                ⌥ + ⌘ + 0 = Show or Hide the Utility Area
+              </li>
+              <li>
+                ⌥ + ⌘ + 1 = File Inspector
+              </li>
+              <li>
+                ⌥ + ⌘ + 2 = Quick Help Inspector
+              </li>
+              <li>
+                ⌥ + ⌘ + 3 = Identity Inspector
+              </li>
+              <li>
+                ⌥ + ⌘ + 4 = Attributes Inspector
+              </li>
+              <li>
+                ⌥ + ⌘ + 5 = Size Inspector
+              </li>
+              <li>
+                ⌥ + ⌘ + 6 = Connections Inspector
+              </li>
+            </ul>
+            <p>
+              If you right click (control click) on the Storyboard in the
+              editor, then you can select a zoom level. You can also use 2
+              finger pinch in your Mac's trackpad to zoom in and out of the
+              Storyboard.
+            </p>
+            <h4><a href="https://www.youtube.com/watch?v=K-jlKB4CkBw"> 8. Introduction To The MVC Pattern </a></h4>
+            <p>
+              <img class="logo jumbotron img-responsive"
+              src="../../assets/MVC.png" alt="MVC"><br>
+              Resource: <a href="https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html">Apple documentation</a>
+
+            </p>
+            <h4> 9. MVC Pattern in Mail.app </h4>
+            <h4><a href="https://www.youtube.com/watch?v=7T4NINcw6ks"> 10. Whats Next </a></h4>
+            <hr class="horizontal-line">
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="row col-md-12">
+            <p><span class="glyphicon glyphicon-chevron-left"></span>
+               <span class="glyphicon glyphicon-chevron-right"></span> with
+               <span class="glyphicon glyphicon-heart"></span> by Kenny Iraheta
+            </p>
+        </div>
+      </footer>
+
+    </div>
+  </body>
+</html>

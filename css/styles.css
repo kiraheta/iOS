@@ -7,6 +7,10 @@ ol {
   list-style-type:square;
 }
 
+ul {
+  color: #9A2617;
+}
+
 .jumbotron {
   background-color: #fafafa!important;
 }
