@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>iOS Development</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="row">
+      	<div class="col-lg-12">
+      		<a href="../../index.html"><img class="logo jumbotron img-responsive" src="../../assets/iOS_Logo.png"
+               alt="udacity logo"></a>
+      	</div>
+      </header>
+
+      <div class="return">
+        <div class="row">
+          <div class="col-md-12">
+            <a href="../../core/one.html">
+              <span class="glyphicon glyphicon-circle-arrow-left"
+              style="font-size:3rem;"></span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title">
+            <h1> AutoLayout and Buttons </h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <hr class="horizontal-line">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="body">
+            <h4><a href="https://www.youtube.com/watch?v=gqgAqa4ZKYs"> 1. Introduction </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=eR6gxVZSHD0"> 2. Intro To The Storyboard </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=GW-sFVx1Hoc"> 3. AutoLayout Basics </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=OHXqtuiyehY"> 4. AutoLayout Minimum Info Needed </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=cI4g6u0XoEs"> 5. Quiz on AutoLayout Constraints </a></h4>
+            <p><ol><li><a href="https://www.youtube.com/watch?v=EIxX3gF876I">Solution</a></li></ol></p>
+            <h4><a href="https://www.youtube.com/watch?v=p8nNHHfbDFI"> 6. Constraints To The Record Button </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=eLFPOnDQH9I"> 7. Alternative Way To Create Constraints </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=G2moZSeYgwE"> 8. Adding Code For The Button </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=je0sEuYTDgM"> 9. From Code To UI Element </a></h4>
+            <h4> 10. Note on IBOutlets, IBActions, and Constraints </h4>
+            <p>
+              Here are a few items to help you along the way:
+            </p>
+            <p>
+              <blockquote style="font-size: 14px;">
+                Did you notice the filled in circles in the Xcode editor gutter
+                next to IBOutlets and IBActions?
+              </blockquote>
+            </p>
+            <p>
+              They are supposed to indicate when the IBOutlets or IBActions are
+              wired up to a UI Element. Unfortunately, there is a bug in Xcode.
+              These circles will only fill in once you open the Main.Storyboard
+              file. If you just started Xcode and open a view controller, you
+              may be wondering if you connected these or not. Well, you likely
+              did, and Xcode has just not read the Main.Storyboard file to
+              figure it out.
+            </p>
+            <blockquote style="font-size: 14px;">
+              Are you noticing that your label and/or button are out of place?
+            </blockquote>
+            <p>
+              This is likely because you've not provided enough constraints or
+              you've provided the incorrect constraints. But don't worry, that
+              is a fixable problem, and later in the course, we will provide an
+              even better solution for laying out UI elements. Note, it is
+              often useful to take a careful look at your constraints and work
+              out on paper how they would behave in different device sizes and
+              orientations.
+            </p>
+            <h4> 11. Difference between IBAction and IBOutlet </h4>
+            <h4><a href="https://www.youtube.com/watch?v=rXkLkwGL7fs"> 12. Connecting the Stop Recording Button </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=rT0lrgXGaUo"> 13. Adding for the Constraints for the New Buttons </a></h4>
+            <h4> 14. More Info on AutoLayout </h4>
+            <p>
+              There are several ways to determine which AutoLayout Constraints
+              you will need. The steps we’ve shown so far—to position the two
+              buttons and the label in our app—take you through Apple’s
+              recommended path for knowing what constraints to create.
+            </p>
+            <p>
+              It may seem like a lot of work, but AutoLayout is really useful
+              in setting up user interfaces to work well for the differently
+              sized screens of the various iOS devices.
+            </p>
+            <p>
+              In programming, you have to keep the attitude of a child. You
+              have to be willing to experiment and to try new things. You can’t
+              really break anything at this point, you are just positioning UI
+              Elements. Even if Xcode is complaining at you, which it will,
+              don’t give up, just go back into thinking about the small steps
+              you need to get to your goal. Don’t be afraid to try things out
+              in Xcode.
+            </p>
+            <h4><a href="https://www.youtube.com/watch?v=jqPeYkIkwYY"> 15. Where Do Buttons Come From </a></h4>
+            <hr class="horizontal-line">
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="row col-md-12">
+            <p><span class="glyphicon glyphicon-chevron-left"></span>
+               <span class="glyphicon glyphicon-chevron-right"></span> with
+               <span class="glyphicon glyphicon-heart"></span> by Kenny Iraheta
+            </p>
+        </div>
+      </footer>
+
+    </div>
+  </body>
+</html>
