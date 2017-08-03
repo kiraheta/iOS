@@ -3,6 +3,10 @@ html,body {
   overflow-x: hidden;
 }
 
+blockquote {
+  font-size: 14px!important;
+}
+
 ol {
   list-style-type:square;
 }

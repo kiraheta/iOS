@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>iOS Development</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="row">
+      	<div class="col-lg-12">
+      		<a href="../../index.html"><img class="logo jumbotron img-responsive" src="../../assets/iOS_Logo.png"
+               alt="udacity logo"></a>
+      	</div>
+      </header>
+
+      <div class="return">
+        <div class="row">
+          <div class="col-md-12">
+            <a href="../../core/one.html">
+              <span class="glyphicon glyphicon-circle-arrow-left"
+              style="font-size:3rem;"></span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title">
+            <h1> ViewController and Multiple Views </h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <hr class="horizontal-line">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="body">
+            <h4><a href="https://www.youtube.com/watch?v=k8-Ejb0qK28"> 1. Introduction </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=2U9_S0L8p_4"> 2. Application Lifecycle </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=-r753T1PfOg"> 3. Opening Documentation In Xcode </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=ENmfR3qO7Fs"> 4. UIViewController viewDidLoad </a></h4>
+            <p>
+              <a href="https://www.youtube.com/watch?v=VOvqN9yd40Y">Solution</a>
+            </p>
+            <h4><a href="https://www.youtube.com/watch?v=CI7vvQu9EEk"> 5. ViewDidLoad And Friends </a></h4>
+            <p>
+              Did you notice the
+              <code>stopRecordingButton.isEnabled = false code</code> in the
+              <code>viewDidLoadFunction?</code> You will be adding that code
+              shortly in this lesson, it makes it so that the stop recording
+              button is DISABLED when this view first loads, since no
+              recording is taking place.
+            </p>
+            <p>
+              Further
+              <a href="https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson4.html">
+                View Controller Documentation</a> from Apple
+            </p>
+            <h4><a href="https://www.youtube.com/watch?v=ssDd_In6iz4"> 6. Setting State Before A View Appears </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=ubrgPl3-RPQ"> 7. Enable and Disable the Recording Buttons </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=YRsYgMeHb8U"> 8. Adding Images to the Recording Buttons </a></h4>
+            <p>Supporting Materials</p>
+            <p><a href="https://d17h27t6h515a5.cloudfront.net/topher/2016/November/582a769b_pitch-perfect-assets/pitch-perfect-assets.zip">Pitch Perfect Assets</a></p>
+            <h4> 9. Disabling the Stop Recording Button</h4>
+            <blockquote>
+              Remember the viewWillAppear method you added a print statement to
+              before?
+            </blockquote>
+            <p>
+              This method gets called right before the view appears on-screen,
+              which is when we want to disable the Stop Recording button.
+            </p>
+            <blockquote>
+              How do we find what function or property to help us disable a
+              button? Where do we look?
+            </blockquote>
+            <p>
+                Documentation to the rescue.
+            </p>
+            <h5><strong>Determine How to Disable a UIButton</strong></h5>
+            <p>
+              Start by using SHIFT+COMMAND+ZERO to open the documentation
+              viewer — then search for "UIButton". If you look through the
+              documentation, you'll find there isn't any information
+              suggesting a way to turn a button on/off.
+            </p>
+            <blockquote>
+              Where else should we look? What should we do?
+            </blockquote>
+            <p>
+                Continue forward for more information!
+            </p>
+            <h4><a href="https://www.youtube.com/watch?v=EcF0W4meneI"> 10. How to Enable or Disable a UI Button </a></h4>
+            <p><a href="https://www.youtube.com/watch?v=h53RoSD_7I4">Solution</a>/<p>
+            <h4><a href="https://www.youtube.com/watch?v=0CtYvHNqVnI"> 11. Enabling And Disabling The Buttons </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=g1w0r_zXqaQ"> 12. Multiple Views </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=t0W1S0iA7GE"> 13. Using A UINavigation Controller </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=WMVEnCFPyzM"> 14. Adding A Second View Controller </a></h4>
+            <h4> 15. Quiz: UINavigationController</h4>
+            <h4><a href="https://www.youtube.com/watch?v=dt6vwORHbyY"> 16. Recap And Next Steps </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=PyPdBYjKgKU"> 17. Recap What You Have Learned  </a></h4>
+            <hr class="horizontal-line">
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="row col-md-12">
+            <p><span class="glyphicon glyphicon-chevron-left"></span>
+               <span class="glyphicon glyphicon-chevron-right"></span> with
+               <span class="glyphicon glyphicon-heart"></span> by Kenny Iraheta
+            </p>
+        </div>
+      </footer>
+
+    </div>
+  </body>
+</html>
