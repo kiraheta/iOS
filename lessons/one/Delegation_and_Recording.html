@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>iOS Development</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/prism.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="row">
+      	<div class="col-lg-12">
+      		<a href="../../index.html"><img class="logo jumbotron img-responsive" src="../../assets/iOS_Logo.png"
+               alt="udacity logo"></a>
+      	</div>
+      </header>
+
+      <div class="return">
+        <div class="row">
+          <div class="col-md-12">
+            <a href="../../core/one.html">
+              <span class="glyphicon glyphicon-circle-arrow-left"
+              style="font-size:3rem;"></span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title">
+            <h1> Delegation and Recording </h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <hr class="horizontal-line">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="body">
+            <h4><a href="https://www.youtube.com/watch?v=YL2GwGWFQTw"> 1. Lesson Overview </a></h4>
+            <h4><a href=""> 2. AVAudioRecorder and Deciphering New Code </a></h4>
+            <p>
+              There is a very useful class inside of AVFoundation that focuses
+              on recording audio. Its called AVAudioRecorder. We are going to
+              utilize this class for, you guessed it, recording the audio.
+            </p>
+            <p>
+              Here is some example code that uses an AVAudioRecorder.
+            </p>
+            <pre><code class="language-Swift">
+<!--     -->  import AVFoundation
+
+<!--     -->  class ViewController: UIViewController {
+
+<!--     -->      // MARK: Properties
+
+<!--     -->      var audioRecorder: AVAudioRecorder!
+
+<!--     -->      @IBAction func recordAudio(_ sender: AnyObject) {
+<!--     -->          recordingLabel.text = "Recording in progress"
+<!--     -->          stopRecordingButton.isEnabled = true
+<!--     -->          recordButton.isEnabled = false
+
+<!--     -->          let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
+<!--     -->          let recordingName = "recordedVoice.wav"
+<!--     -->          let pathArray = [dirPath, recordingName]
+<!--     -->          let filePath = URL(string: pathArray.joined(separator: "/"))
+
+<!--     -->          let session = AVAudioSession.sharedInstance()
+<!--     -->          try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, with:AVAudioSessionCategoryOptions.defaultToSpeaker)
+
+<!--     -->          try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])
+<!--     -->          audioRecorder.isMeteringEnabled = true
+<!--     -->          audioRecorder.prepareToRecord()
+<!--     -->          audioRecorder.record()
+<!--     -->      }
+<!--     -->  }
+            </code></pre>
+            <h4><a href="https://www.youtube.com/watch?v=yjItkL5Kg1c"> 3. AVAudioRecorder Code Explanation </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=svLET5au9kI"> 4. Renaming The Recording View Controller </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=RhquOZzvHe8"> 5. Adding The Code To The RecorderVC </a></h4>
+            <p>Add the following code to the <code>recordAudio</code> method:</p>
+            <pre><code class="language-Swift">
+<!--     -->  @IBAction func recordAudio(_ sender: AnyObject) {
+<!--     -->      recordingLabel.text = "Recording in progress"
+<!--     -->      stopRecordingButton.isEnabled = true
+<!--     -->      recordButton.isEnabled = false
+
+<!--     -->      let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
+<!--     -->      let recordingName = "recordedVoice.wav"
+<!--     -->      let pathArray = [dirPath, recordingName]
+<!--     -->      let filePath = URL(string: pathArray.joined(separator: "/"))
+
+<!--     -->      let session = AVAudioSession.sharedInstance()
+<!--     -->      try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, with:AVAudioSessionCategoryOptions.defaultToSpeaker)
+
+<!--     -->      try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])
+<!--     -->      audioRecorder.isMeteringEnabled = true
+<!--     -->      audioRecorder.prepareToRecord()
+<!--     -->      audioRecorder.record()
+<!--     -->  }
+            </code></pre>
+            <h4><a href="https://www.youtube.com/watch?v=dXNTGyswQJ0"> 6. Recording Issues </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=CY0yvtSc_xI"> 7. Fixing The Segue </a></h4>
+            <h4> 8. Quiz: The Meaning of the Word Delegate </h4>
+            <h4><a href="https://www.youtube.com/watch?v=dTAmu_QLIiI"> 9. Adding Delegation To RecordSoundsVC </a></h4>
+            <p>
+              Remember that protocols act as a kind of contract.
+              AVAudioRecorder does not know what classes you have in your app.
+              However, if you say that your class conforms to the
+              AVAudioRecorderDelegate protocol, then it knows it can call a
+              specific function in your class.
+            </p>
+            <p>
+              The specific function has been defined in the protocol (in this
+              case, the AVAudioRecorderDelegate protocol). This way your class
+              and the AVAudioRecorder are loosely coupled, and they can work
+              together without having to know much about each other.
+            </p>
+            <p>
+              Loose coupling of classes is really useful in building
+              interchangeable pieces of code, and used quite a lot in iOS.
+            </p>
+            <h4><a href="https://www.youtube.com/watch?v=3W0HhJNC1C0"> 10. Summarize What You Learned (Delegation) </a></h4>
+            <p><a href="https://www.youtube.com/watch?v=h4-0EuRVxrk">Solution</a></p>
+            <h4><a href="https://www.youtube.com/watch?v=dMDfOrADlpE"> 11. Sending The Recorded Audio File </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=YdrjFD02luI"> 12. Creating The PlaySoundsViewController </a></h4>
+            <h4> 13. Setup the PlaySoundsViewController </h4>
+            <p>
+              The PlaySoundsViewController you have just created needs a little
+              tweaking so that it can receive the recording audio URL from the
+              RecordSoundsViewController.
+            </p>
+            <ol>
+              <li>
+                Right under the <strong>PlaySoundsViewController</strong> class
+                declaration, add the following line:
+                <code> var recordedAudioURL: URL! </code>
+              </li>
+            </ol>
+            <h4><a href="https://www.youtube.com/watch?v=ak5hRiydynw"> 14. Prepare For Segue And Receiving The Data </a></h4>
+            <p>
+              There is quite a bit of information covered in this video. Rest
+              assured you only need to understand it at a high level for now.
+              Later in this course, in UIKit Fundamentals, you will be learning
+              about segues and some more of the View Controller functions in
+              greater detail.
+            </p>
+            <p>
+              All you need to take away from this video is this: before
+              Storyboard executes the segue, it will call our
+              <code>RecordSoundsViewController</code> to prepare for that
+              segue. In preparing, the
+              <code>RecordSoundsViewController</code> will store away the path
+              to the recorded audio.
+            </p>
+            <h4><a href="https://www.youtube.com/watch?v=NO3DCCkjUoI"> 15. Wrapup And What's Ahead </a></h4>
+
+            <hr class="horizontal-line">
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="row col-md-12">
+            <p><span class="glyphicon glyphicon-chevron-left"></span>
+               <span class="glyphicon glyphicon-chevron-right"></span> with
+               <span class="glyphicon glyphicon-heart"></span> by Kenny Iraheta
+            </p>
+        </div>
+      </footer>
+
+    </div>
+    <script src="../../js/prism.js"></script>
+  </body>
+</html>
