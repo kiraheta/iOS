@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>iOS Development</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/prism.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="row">
+      	<div class="col-lg-12">
+      		<a href="../../index.html"><img class="logo jumbotron img-responsive" src="../../assets/iOS_Logo.png"
+               alt="udacity logo"></a>
+      	</div>
+      </header>
+
+      <div class="return">
+        <div class="row">
+          <div class="col-md-12">
+            <a href="../../core/one.html">
+              <span class="glyphicon glyphicon-circle-arrow-left"
+              style="font-size:3rem;"></span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title">
+            <h1> Playback and Audio Effects </h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <hr class="horizontal-line">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="body">
+            <h4><a href="https://www.youtube.com/watch?v=u8TYx79Xs8Q"> 1. Lesson Overview  </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=hnGuSuueryg"> 2. StackViews As A Concept  </a></h4>
+            <p>
+              Remember that many of the UI Elements you have come to know, such
+              as <code>UIButton</code> and <code>UILabel</code>, are subclasses
+              of <code>UIView</code>. In fact, all UI Elements that you are
+              going to be using in iOS come from <code>UIView</code>, as they
+              have to know how to draw or render themselves.
+            </p>
+            <h4><a href="https://www.youtube.com/watch?v=uWdmdwKdVO4"> 3. Inserting The StackViews (PlaybackView) </a></h4>
+            <p>If you want to read more about UIStackViews there are a few great places to start:</p>
+            <ol>
+              <li><a href="https://developer.apple.com/videos/play/wwdc2015/218/">Apple WWDC 2015 Video on StackViews</a></li>
+              <li><a href="https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/">The Official Apple UIStackView Documentation</a></li>
+            </ol>
+            <h4><a href="https://www.youtube.com/watch?v=AhJJ3c5eu14"> 4. Snail And Rabbit Button Icons </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=5QCg4CKxpX4"> 5. StackViews For Chipmunk And Darth Vader </a></h4>
+            <h4> 6. Stackviews for Echo + Reverb and Stopping Playback </h4>
+            <h5><strong>Add StackViews, Buttons, and Constraints</strong></h5>
+            <p>
+              Follow similar steps as you saw in the previous video to add two
+              more stack views and the appropriate buttons and constraints to
+              the <code>PlaySoundsViewController</code>. When you're done, the Document
+              Outline should look like this...
+            </p>
+            <p>
+              <img src="../../assets/stack_views.png" class="img-responsive"
+              alt="stack views" style="width:350px;height:450px;"></p>
+            <p>
+              And the interface should look like this...
+            </p>
+              <img src="../../assets/interface.png" class="img-responsive"
+              alt="interface" style="width:350px;height:450px;"></p>
+            <p>
+              In this image, the outermost stack view is selected so you can
+              see the constraints applied to it.
+            </p>
+            <h4><a href="https://www.youtube.com/watch?v=Ar-oTszap58"> 7. Wiring Up Buttons (IBOutlets+IBActions) </a></h4>
+            <h4><strong>Wiring Up Buttons (IBOutlets+IBActions)</strong></h4>
+            <p>Here is the boilerplate code you can use to follow along:</p>
+            <h4><strong>IBOutlets</strong></h4>
+            <pre><code>
+<!--     -->  @IBOutlet weak var snailButton: UIButton!
+<!--     -->  @IBOutlet weak var chipmunkButton: UIButton!
+<!--     -->  @IBOutlet weak var rabbitButton: UIButton!
+<!--     -->  @IBOutlet weak var vaderButton: UIButton!
+<!--     -->  @IBOutlet weak var echoButton: UIButton!
+<!--     -->  @IBOutlet weak var reverbButton: UIButton!
+<!--     -->  @IBOutlet weak var stopButton: UIButton!
+            </code></pre>
+            <h4><strong>IBActions</strong></h4>
+            <pre><code>
+<!--     -->  @IBAction func playSoundForButton(_ sender: UIButton) {
+<!--     -->      print("Play Sound Button Pressed")
+<!--     -->  }
+
+<!--     -->  @IBAction func stopButtonPressed(_ sender: AnyObject) {
+<!--     -->      print("Stop Audio Button Pressed")
+<!--     -->  }
+            </code></pre>
+            <h4><a href="https://www.youtube.com/watch?v=A-JEKZBcC7M"> 8. Troubleshooting IBOutlets And IBActions </a></h4>
+            <h4><a href="https://www.youtube.com/watch?v=bFDUXMnmAiY"> 9. Adding The Audio Extension </a></h4>
+            <h4><strong>Adding The Audio Extension</strong></h4>
+            <p>
+              Paste the following code below the button outlets in
+              <code>PlaySoundsViewController</code>:
+            </p>
+            <pre><code>
+<!--     -->  var recordedAudioURL:URL!
+<!--     -->  var audioFile:AVAudioFile!
+<!--     -->  var audioEngine:AVAudioEngine!
+<!--     -->  var audioPlayerNode: AVAudioPlayerNode!
+<!--     -->  var stopTimer: Timer!
+
+<!--     -->  enum ButtonType: Int {
+<!--     -->      case slow = 0, fast, chipmunk, vader, echo, reverb
+<!--     -->  }
+            </code></pre>
+            <p>
+              Your <code>viewWillAppear</code> will contain the following:
+            </p>
+            <pre><code>
+<!--     -->  override func viewWillAppear(_ animated: Bool) {
+<!--     -->  configureUI(.notPlaying)
+}
+            </code></pre>
+            <p>
+              Please see the <code>PlaySoundsViewController+Audio.swift</code>
+              file located on this page. Download and use this file.
+            </p>
+            <ol>
+              <li>
+                <a href="https://developer.apple.com/reference/avfoundation/avaudioengine">
+                  Apple Documentation: AVAudioEngine</a>
+              </li>
+              <li>
+                <a href="https://developer.apple.com/reference/avfoundation/avaudionode">
+                  Apple Documentation: AVAudioNode</a>
+              </li>
+              <li>
+                <a href="https://d17h27t6h515a5.cloudfront.net/topher/2016/November/582a8174_playsoundsviewcontroller-audio/playsoundsviewcontroller-audio.swift">Supporting Materials</a>
+              </li>
+            </ol>
+            <h4><a href="https://www.youtube.com/watch?v=o6GgiGIbTIM"> 10. Playing Back Audio </a></h4>
+            <p>
+              Paste the below for the <code>playSoundForButton</code> function:
+            </p>
+            <pre><code>
+<!--     -->  @IBAction func playSoundForButton(_ sender: UIButton) {
+<!--     -->      switch(ButtonType(rawValue: sender.tag)!) {
+<!--     -->      case .slow:
+<!--     -->          playSound(rate: 0.5)
+<!--     -->      case .fast:
+<!--     -->          playSound(rate: 1.5)
+<!--     -->      case .chipmunk:
+<!--     -->          playSound(pitch: 1000)
+<!--     -->      case .vader:
+<!--     -->          playSound(pitch: -1000)
+<!--     -->      case .echo:
+<!--     -->          playSound(echo: true)
+<!--     -->      case .reverb:
+<!--     -->          playSound(reverb: true)
+<!--     -->      }
+
+<!--     -->      configureUI(.playing)
+<!--     -->  }
+              </code></pre>
+            <h4><a href=""> 11. PlaySoundsViewController Extension </a></h4>
+            <h4> 12. Clean Up </h4>
+            <h4><a href="https://www.youtube.com/watch?v=XO6VelnorcI"> 13. Wrap Up </a></h4>
+            <h4> 14. Reflection</h4>
+
+
+            <hr class="horizontal-line">
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="row col-md-12">
+            <p><span class="glyphicon glyphicon-chevron-left"></span>
+               <span class="glyphicon glyphicon-chevron-right"></span> with
+               <span class="glyphicon glyphicon-heart"></span> by Kenny Iraheta
+            </p>
+        </div>
+      </footer>
+
+    </div>
+    <script src="../../js/prism.js"></script>
+  </body>
+</html>
